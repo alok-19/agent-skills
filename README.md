@@ -16,9 +16,10 @@ Skills are agent-framework agnostic. Use them with Claude Code, Antigravity, cus
 
 ## 📦 Available Skills
 
-| Skill | Description |
-|-------|-------------|
-| [`creating-architecture-diagrams`](./creating-architecture-diagrams/SKILL.md) | Generate professional draw.io diagrams (AWS/GCP/Azure) with mathematically precise edge routing, no line overlaps, and clean layout |
+| Skill | Description | Languages |
+|-------|-------------|-----------|
+| [`creating-architecture-diagrams`](./creating-architecture-diagrams/SKILL.md) | Generate professional draw.io diagrams (AWS/GCP/Azure) with mathematically precise edge routing, no line overlaps, and clean layout | Any |
+| [`code-rigor-check`](./code-rigor-check/SKILL.md) | Structured pre-ship code review covering problem framing, edge cases, failure modes, and AI-specific failure patterns (hallucinated APIs, mirror tests, silent coercions). Includes a stack-specific red flags reference. | Any · Python · JS/TS · SQL · AWS · Java · Go · Rust · C# |
 
 ---
 
@@ -60,9 +61,13 @@ Your project structure should look like:
 your-project/
 ├── .agents/
 │   └── skills/
-│       └── creating-architecture-diagrams/
+│       ├── creating-architecture-diagrams/
+│       │   ├── SKILL.md
+│       │   └── drawio-xml-reference.md
+│       └── code-rigor-check/
 │           ├── SKILL.md
-│           └── drawio-xml-reference.md
+│           └── references/
+│               └── ai-code-red-flags.md
 └── ... rest of project
 ```
 
